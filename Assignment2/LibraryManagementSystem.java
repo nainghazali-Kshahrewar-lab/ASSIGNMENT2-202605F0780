@@ -1,3 +1,4 @@
+// ===== LibraryManagementSystem.java =====
 package librarymanagement;
 
 import java.util.ArrayList;
@@ -19,7 +20,6 @@ public class LibraryManagementSystem {
         LibraryManagementSystem system = new LibraryManagementSystem();
         system.run();
     }
-
 
     public void run() {
         boolean running = true;
@@ -59,7 +59,6 @@ public class LibraryManagementSystem {
             }
         }
     }
-
 
     private void displayMenu() {
         System.out.println("\n╔══════════════════════════════════════════════════════════════╗");
@@ -134,7 +133,6 @@ public class LibraryManagementSystem {
         System.out.println("✓ Member added successfully!");
     }
 
-
     private void borrowItem() {
         System.out.println("\n--- Borrow Item ---");
         if (members.isEmpty() || items.isEmpty()) {
@@ -169,7 +167,6 @@ public class LibraryManagementSystem {
             System.out.println("Borrowing failed. Please check member limit or item status.");
         }
     }
-
 
     private void returnItem() {
         System.out.println("\n--- Return Item ---");
@@ -208,7 +205,6 @@ public class LibraryManagementSystem {
         System.out.printf("Item returned successfully. Late fee: RM%.2f%n", lateFee);
     }
 
-
     private void displayAllItems() {
         System.out.println("\n╔══════════════════════════════════════════════════════════════╗");
         System.out.println("║                    LIBRARY ITEMS                            ║");
@@ -222,11 +218,10 @@ public class LibraryManagementSystem {
         int count = 1;
         for (LibraryItem item : items) {
             System.out.println("\n--- Item " + count + " ---");
-            item.displayInfo();  
+            item.displayInfo();
             count++;
         }
     }
-
 
     private void displayAllMembers() {
         System.out.println("\n╔══════════════════════════════════════════════════════════════╗");
@@ -245,7 +240,6 @@ public class LibraryManagementSystem {
             count++;
         }
     }
-
 
     private void searchItem() {
         System.out.println("\n--- Search Item ---");
@@ -274,7 +268,6 @@ public class LibraryManagementSystem {
         }
     }
 
-
     private Member findMemberById(String memberId) {
         for (Member member : members) {
             if (member.getMemberId().equalsIgnoreCase(memberId)) {
@@ -283,7 +276,6 @@ public class LibraryManagementSystem {
         }
         return null;
     }
-
 
     private LibraryItem findItemById(String itemId) {
         for (LibraryItem item : items) {
@@ -299,11 +291,11 @@ public class LibraryManagementSystem {
             try {
                 System.out.print(prompt);
                 int value = scanner.nextInt();
-                scanner.nextLine();  
+                scanner.nextLine();
                 return value;
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input. Please enter a number.");
-                scanner.nextLine();  
+                scanner.nextLine();
             }
         }
     }
