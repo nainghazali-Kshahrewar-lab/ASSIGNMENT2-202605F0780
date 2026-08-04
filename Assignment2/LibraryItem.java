@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public abstract class LibraryItem {
     private String itemId;
     private String title;
@@ -30,6 +32,7 @@ public abstract class LibraryItem {
     public abstract double getLateFee(int daysLate);
     public abstract String getItemType();
 
+    @Override
     public String toString() {
         return String.format("%s: %s by %s", itemId, title, author);
     }
