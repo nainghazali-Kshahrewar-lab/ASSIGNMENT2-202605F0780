@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public abstract class LibraryItem {
     private String itemId;
     private String title;
@@ -26,7 +24,7 @@ public abstract class LibraryItem {
         System.out.println("Item ID: " + itemId);
         System.out.println("Title: " + title);
         System.out.println("Author: " + author);
-        System.out.println("Available: " + (isAvailable ? "Yes" : "No"));  // FIX: added '+'
+        System.out.println("Available: " + (isAvailable ? "Yes" : "No"));
     }
 
     public abstract double getLateFee(int daysLate);
