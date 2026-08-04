@@ -61,7 +61,6 @@ public class Member {
         }
     }
 
-    @Override
     public String toString() {
         return String.format("Member[%s, %s]", memberId, name);
     }
