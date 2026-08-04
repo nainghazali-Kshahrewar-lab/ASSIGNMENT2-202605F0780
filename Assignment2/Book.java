@@ -12,17 +12,14 @@ public class Book extends LibraryItem {
     public int getPages() { return pages; }
 
     public void setIsbn(String isbn) {
-        if (isbn != null && !isbn.trim().isEmpty()) {
-            this.isbn = isbn;
-        }
+        if (isbn != null && !isbn.trim().isEmpty()) this.isbn = isbn;
     }
 
     public void setPages(int pages) {
-        if (pages > 0) {
-            this.pages = pages;
-        }
+        if (pages > 0) this.pages = pages;
     }
 
+    @Override
     public void displayInfo() {
         super.displayInfo();
         System.out.println("Type: Book");
@@ -30,14 +27,17 @@ public class Book extends LibraryItem {
         System.out.println("Pages: " + pages);
     }
 
+    @Override
     public double getLateFee(int daysLate) {
         return daysLate * 0.50;
     }
 
+    @Override
     public String getItemType() {
         return "Book";
     }
 
+    @Override
     public String toString() {
         return super.toString() + " (Book)";
     }
