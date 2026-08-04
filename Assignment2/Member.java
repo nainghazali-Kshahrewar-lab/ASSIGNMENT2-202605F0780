@@ -18,6 +18,12 @@ public class Member {
     public String getContact() { return contact; }
     public ArrayList<LibraryItem> getBorrowedItems() { return borrowedItems; }
 
+    public void setContact(String contact) {
+        if (contact != null && !contact.trim().isEmpty()) {
+            this.contact = contact;
+        }
+    }
+
     public boolean borrowItem(LibraryItem item) {
         if (item == null || !item.isAvailable()) {
             return false;
@@ -53,5 +59,10 @@ public class Member {
                 System.out.println("    - " + item.getTitle() + " (" + item.getItemId() + ")");
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Member[%s, %s]", memberId, name);
     }
 }
