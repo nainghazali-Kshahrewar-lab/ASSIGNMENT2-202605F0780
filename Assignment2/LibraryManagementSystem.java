@@ -26,27 +26,13 @@ public class LibraryManagementSystem {
             int choice = getIntInput("Enter your choice (1-8): ");
 
             switch (choice) {
-                case 1:
-                    addItem();
-                    break;
-                case 2:
-                    addMember();
-                    break;
-                case 3:
-                    borrowItem();
-                    break;
-                case 4:
-                    returnItem();
-                    break;
-                case 5:
-                    displayAllItems();
-                    break;
-                case 6:
-                    displayAllMembers();
-                    break;
-                case 7:
-                    searchItem();
-                    break;
+                case 1: addItem(); break;
+                case 2: addMember(); break;
+                case 3: borrowItem(); break;
+                case 4: returnItem(); break;
+                case 5: displayAllItems(); break;
+                case 6: displayAllMembers(); break;
+                case 7: searchItem(); break;
                 case 8:
                     running = false;
                     System.out.println("\nThank you for using the Library Management System!");
@@ -288,11 +274,11 @@ public class LibraryManagementSystem {
             try {
                 System.out.print(prompt);
                 int value = scanner.nextInt();
-                scanner.nextLine();
+                scanner.nextLine(); // consume newline
                 return value;
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input. Please enter a number.");
-                scanner.nextLine();
+                scanner.nextLine(); // clear invalid input
             }
         }
     }
