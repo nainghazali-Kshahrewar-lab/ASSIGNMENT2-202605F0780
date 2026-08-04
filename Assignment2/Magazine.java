@@ -14,24 +14,20 @@ public class Magazine extends LibraryItem {
         }
     }
 
-    @Override
     public void displayInfo() {
         super.displayInfo();
         System.out.println("Type: Magazine");
         System.out.println("Issue Number: " + issueNumber);
     }
 
-    @Override
     public double getLateFee(int daysLate) {
         return daysLate * 0.30;
     }
 
-    @Override
     public String getItemType() {
         return "Magazine";
     }
 
-    @Override
     public String toString() {
         return super.toString() + " (Magazine)";
     }
