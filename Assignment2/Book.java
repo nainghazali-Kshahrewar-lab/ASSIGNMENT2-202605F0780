@@ -23,7 +23,6 @@ public class Book extends LibraryItem {
         }
     }
 
-    @Override
     public void displayInfo() {
         super.displayInfo();
         System.out.println("Type: Book");
@@ -31,17 +30,14 @@ public class Book extends LibraryItem {
         System.out.println("Pages: " + pages);
     }
 
-    @Override
     public double getLateFee(int daysLate) {
         return daysLate * 0.50;
     }
 
-    @Override
     public String getItemType() {
         return "Book";
     }
 
-    @Override
     public String toString() {
         return super.toString() + " (Book)";
     }
