@@ -26,13 +26,12 @@ public abstract class LibraryItem {
         System.out.println("Item ID: " + itemId);
         System.out.println("Title: " + title);
         System.out.println("Author: " + author);
-        System.out.println("Available: " + (isAvailable ? "Yes" : "No"));
+        System.out.println("Available: " + (isAvailable ? "Yes" : "No"));  // FIX: added '+'
     }
 
     public abstract double getLateFee(int daysLate);
     public abstract String getItemType();
 
-    @Override
     public String toString() {
         return String.format("%s: %s by %s", itemId, title, author);
     }
