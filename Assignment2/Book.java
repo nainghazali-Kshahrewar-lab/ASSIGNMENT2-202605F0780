@@ -1,36 +1,28 @@
-public abstract class LibraryItem {
-    private String itemId;
-    private String title;
-    private String author;
-    private boolean isAvailable;
+public class Book extends LibraryItem {
+    private String isbn;
+    private int pages;
 
-    public LibraryItem(String itemId, String title, String author) {
-        this.itemId = itemId;
-        this.title = title;
-        this.author = author;
-        this.isAvailable = true;
+    public Book(String itemId, String title, String author, String isbn, int pages) {
+        super(itemId, title, author);
+        this.isbn = isbn;
+        this.pages = pages;
     }
 
-    public String getItemId() { return itemId; }
-    public String getTitle() { return title; }
-    public String getAuthor() { return author; }
-    public boolean isAvailable() { return isAvailable; }
-
-    public void setAvailable(boolean available) {
-        isAvailable = available;
-    }
+    public String getIsbn() { return isbn; }
+    public int getPages() { return pages; }
 
     public void displayInfo() {
-        System.out.println("Item ID: " + itemId);
-        System.out.println("Title: " + title);
-        System.out.println("Author: " + author);
-        System.out.println("Available: " + (isAvailable ? "Yes" : "No"));
+        super.displayInfo();
+        System.out.println("Type: Book");
+        System.out.println("ISBN: " + isbn);
+        System.out.println("Pages: " + pages);
     }
 
-    public abstract double getLateFee(int daysLate);
-    public abstract String getItemType();
+    public double getLateFee(int daysLate) {
+        return daysLate * 0.50;
+    }
 
-    public String toString() {
-        return String.format("%s: %s by %s", itemId, title, author);
+    public String getItemType() {
+        return "Book";
     }
 }
