@@ -19,15 +19,11 @@ public class Member {
     public ArrayList<LibraryItem> getBorrowedItems() { return borrowedItems; }
 
     public void setContact(String contact) {
-        if (contact != null && !contact.trim().isEmpty()) {
-            this.contact = contact;
-        }
+        if (contact != null && !contact.trim().isEmpty()) this.contact = contact;
     }
 
     public boolean borrowItem(LibraryItem item) {
-        if (item == null || !item.isAvailable()) {
-            return false;
-        }
+        if (item == null || !item.isAvailable()) return false;
         if (borrowedItems.size() >= 5) {
             System.out.println("Member has reached maximum borrow limit (5 items).");
             return false;
