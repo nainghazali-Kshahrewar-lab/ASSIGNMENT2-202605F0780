@@ -1,6 +1,3 @@
-// ===== LibraryManagementSystem.java =====
-package librarymanagement;
-
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -61,9 +58,9 @@ public class LibraryManagementSystem {
     }
 
     private void displayMenu() {
-        System.out.println("\n╔══════════════════════════════════════════════════════════════╗");
-        System.out.println("║          LIBRARY MANAGEMENT SYSTEM                          ║");
-        System.out.println("╚══════════════════════════════════════════════════════════════╝");
+        System.out.println("\n================================================================");
+        System.out.println("          LIBRARY MANAGEMENT SYSTEM");
+        System.out.println("================================================================");
         System.out.println("1. Add Library Item");
         System.out.println("2. Add Member");
         System.out.println("3. Borrow Item");
@@ -206,9 +203,9 @@ public class LibraryManagementSystem {
     }
 
     private void displayAllItems() {
-        System.out.println("\n╔══════════════════════════════════════════════════════════════╗");
-        System.out.println("║                    LIBRARY ITEMS                            ║");
-        System.out.println("╚══════════════════════════════════════════════════════════════╝");
+        System.out.println("\n================================================================");
+        System.out.println("                    LIBRARY ITEMS");
+        System.out.println("================================================================");
 
         if (items.isEmpty()) {
             System.out.println("No items in the library.");
@@ -224,9 +221,9 @@ public class LibraryManagementSystem {
     }
 
     private void displayAllMembers() {
-        System.out.println("\n╔══════════════════════════════════════════════════════════════╗");
-        System.out.println("║                    MEMBER LIST                              ║");
-        System.out.println("╚══════════════════════════════════════════════════════════════╝");
+        System.out.println("\n================================================================");
+        System.out.println("                    MEMBER LIST");
+        System.out.println("================================================================");
 
         if (members.isEmpty()) {
             System.out.println("No members found.");
