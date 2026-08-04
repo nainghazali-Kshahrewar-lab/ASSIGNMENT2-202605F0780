@@ -1,14 +1,10 @@
-package librarymanagement;
-
 import java.util.ArrayList;
-
 
 public class Member {
     private String memberId;
     private String name;
     private String contact;
     private ArrayList<LibraryItem> borrowedItems;
-
 
     public Member(String memberId, String name, String contact) {
         this.memberId = memberId;
@@ -17,12 +13,10 @@ public class Member {
         this.borrowedItems = new ArrayList<>();
     }
 
-
     public String getMemberId() { return memberId; }
     public String getName() { return name; }
     public String getContact() { return contact; }
     public ArrayList<LibraryItem> getBorrowedItems() { return borrowedItems; }
-
 
     public void setContact(String contact) {
         if (contact != null && !contact.trim().isEmpty()) {
@@ -30,12 +24,11 @@ public class Member {
         }
     }
 
-
     public boolean borrowItem(LibraryItem item) {
         if (item == null || !item.isAvailable()) {
             return false;
         }
-        if (borrowedItems.size() >= 5) {  
+        if (borrowedItems.size() >= 5) {
             System.out.println("Member has reached maximum borrow limit (5 items).");
             return false;
         }
@@ -43,7 +36,6 @@ public class Member {
         item.setAvailable(false);
         return true;
     }
-
 
     public LibraryItem returnItem(String itemId) {
         for (LibraryItem item : borrowedItems) {
@@ -55,7 +47,6 @@ public class Member {
         }
         return null;
     }
-
 
     public void displayInfo() {
         System.out.println("Member ID: " + memberId);
@@ -70,7 +61,6 @@ public class Member {
         }
     }
 
-    @Override
     public String toString() {
         return String.format("Member[%s, %s]", memberId, name);
     }
