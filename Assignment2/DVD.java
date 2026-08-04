@@ -11,18 +11,6 @@ public class DVD extends LibraryItem {
     public String getDirector() { return director; }
     public int getRuntime() { return runtime; }
 
-    public void setDirector(String director) {
-        if (director != null && !director.trim().isEmpty()) {
-            this.director = director;
-        }
-    }
-
-    public void setRuntime(int runtime) {
-        if (runtime > 0) {
-            this.runtime = runtime;
-        }
-    }
-
     public void displayInfo() {
         super.displayInfo();
         System.out.println("Type: DVD");
@@ -36,9 +24,5 @@ public class DVD extends LibraryItem {
 
     public String getItemType() {
         return "DVD";
-    }
-
-    public String toString() {
-        return super.toString() + " (DVD)";
     }
 }
