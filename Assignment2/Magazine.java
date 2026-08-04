@@ -8,12 +8,6 @@ public class Magazine extends LibraryItem {
 
     public int getIssueNumber() { return issueNumber; }
 
-    public void setIssueNumber(int issueNumber) {
-        if (issueNumber > 0) {
-            this.issueNumber = issueNumber;
-        }
-    }
-
     public void displayInfo() {
         super.displayInfo();
         System.out.println("Type: Magazine");
@@ -26,9 +20,5 @@ public class Magazine extends LibraryItem {
 
     public String getItemType() {
         return "Magazine";
-    }
-
-    public String toString() {
-        return super.toString() + " (Magazine)";
     }
 }
